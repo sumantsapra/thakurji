@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ThakurJi Salon services and price list." />
+  <title>Services & Price List | ThakurJi Salon</title>
+  <link rel="icon" type="image/png" href="assets/thakur-ji-log.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="ThakurJi Salon home">
+        <img src="assets/thakur-ji-log.png" alt="ThakurJi Salon logo" class="logo" />
+        <span>ThakurJi Salon</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">☰</button>
+      <a class="btn btn-primary nav-cta" href="tel:0395440478">Call to Book</a>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:0395440478">Call to Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <p class="eyebrow">Services & Pricing</p>
+        <h1>Service Menu With Transparent Pricing</h1>
+        <p class="hero-copy">Discover our most-requested services. Final pricing can vary slightly based on hair length, density, and custom styling requests.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container services-grid">
+        <article class="card">
+          <h3>Haircuts & Styling</h3>
+          <p>Men's Haircut <strong>- $35</strong></p>
+          <p>Women's Haircut <strong>- $55</strong></p>
+          <p>Kids Cut (Under 12) <strong>- $25</strong></p>
+          <p>Wash & Blow Dry <strong>- $40</strong></p>
+        </article>
+        <article class="card">
+          <h3>Color Services</h3>
+          <p>Root Touch-up <strong>- $75</strong></p>
+          <p>Global Color <strong>- $120</strong></p>
+          <p>Highlights (Half) <strong>- $110</strong></p>
+          <p>Highlights (Full) <strong>- $160</strong></p>
+        </article>
+        <article class="card">
+          <h3>Beard & Grooming</h3>
+          <p>Beard Trim <strong>- $20</strong></p>
+          <p>Haircut + Beard Combo <strong>- $50</strong></p>
+          <p>Clean Shave <strong>- $22</strong></p>
+          <p>Face Cleanup <strong>- $30</strong></p>
+        </article>
+        <article class="card">
+          <h3>Treatments</h3>
+          <p>Hair Spa <strong>- $65</strong></p>
+          <p>Scalp Treatment <strong>- $55</strong></p>
+          <p>Keratin/Smoothing (from) <strong>- $220</strong></p>
+          <p>Deep Conditioning <strong>- $45</strong></p>
+        </article>
+        <article class="card">
+          <h3>Event Styling</h3>
+          <p>Party Styling <strong>- $85</strong></p>
+          <p>Bridal Hair (Trial + Day) <strong>- $280</strong></p>
+          <p>Glam Curls/Updo <strong>- $95</strong></p>
+          <p>Makeup Add-on <strong>- $120</strong></p>
+        </article>
+        <article class="card">
+          <h3>Quick Add-ons</h3>
+          <p>Fringe Trim <strong>- $12</strong></p>
+          <p>Eyebrow Threading <strong>- $18</strong></p>
+          <p>Hair Wash Add-on <strong>- $10</strong></p>
+          <p>Style Finish Add-on <strong>- $15</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2>Booking Information</h2>
+        <p>No online booking. Please call us for appointments so we can reserve the best slot for your preferred service.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:0395440478">Call 0395440478</a>
+          <a class="btn btn-ghost" href="contact.html">Visit Contact Page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> ThakurJi Salon. All rights reserved.</p>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

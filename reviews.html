@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read ThakurJi Salon Google reviews in a live view." />
+  <title>Google Reviews | ThakurJi Salon</title>
+  <link rel="icon" type="image/png" href="assets/thakur-ji-log.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="ThakurJi Salon home">
+        <img src="assets/thakur-ji-log.png" alt="ThakurJi Salon logo" class="logo" />
+        <span>ThakurJi Salon</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">☰</button>
+      <a class="btn btn-primary nav-cta" href="tel:0395440478">Call to Book</a>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:0395440478">Call to Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <p class="eyebrow">Google Reviews</p>
+        <h1>Top Customer Reviews</h1>
+        <p class="hero-copy">Showing a large reviews collection on-page, with direct links to Google for latest updates and adding new feedback.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.google.com/search?q=Thakur+Ji+Hair+Salon+reviews" target="_blank" rel="noopener noreferrer">Open on Google</a>
+          <a class="btn btn-ghost" href="https://www.google.com/search?q=Thakur+Ji+Hair+Salon+reviews" target="_blank" rel="noopener noreferrer">Add Your Review</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-copy">Source: Google Reviews. For full live listing and newest entries, use the Google links above.</p>
+        <div class="reviews-grid reviews-list-grid" id="reviews-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> ThakurJi Salon. All rights reserved.</p>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

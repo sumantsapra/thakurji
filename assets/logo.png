@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="ThakurJi Salon placeholder logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6bf5a"/>
+      <stop offset="100%" stop-color="#ff6ec7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#120a1d" stroke="url(#g)" stroke-width="6"/>
+  <path d="M33 66c16-30 30-24 40-8 5 8 10 11 15 10" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round"/>
+  <text x="60" y="92" text-anchor="middle" fill="#fff6e8" font-size="14" font-family="Arial, sans-serif" font-weight="700">TS</text>
+</svg>
