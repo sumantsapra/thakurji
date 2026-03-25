@@ -1,6 +1,6 @@
-# ThakurJi Salon - Static Website
+# ThakurJi Hair Salon - Static Website
 
-A modern, jazzy static website concept for **ThakurJi Salon** with:
+A modern, jazzy static website concept for **ThakurJi Hair Salon** with:
 - call-only bookings (no online booking)
 - Google Map embed in Contact section
 - Google review testimonial section
@@ -22,7 +22,7 @@ A modern, jazzy static website concept for **ThakurJi Salon** with:
 In `index.html`, replace these placeholders:
 - Phone: `0395440478`
 - Address: `147 carinish road Clayton VIC 3168`
-- Email: `hello@thakurjisalon.com`
+- Email: `thakurjihairsalon@gmail.com`
 - Opening hours
 
 ### 3) Map pin location

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ThakurJi Salon - premium haircuts, styling, coloring, grooming and beauty services. Call to book your appointment." />
-  <title>ThakurJi Salon | Style That Speaks</title>
+  <meta name="description" content="ThakurJi Hair Salon - premium haircuts, styling, coloring, grooming and beauty services. Call to book your appointment." />
+  <title>ThakurJi Hair Salon | Style That Speaks</title>
   <link rel="icon" type="image/png" href="assets/thakur-ji-log.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,9 +17,9 @@
 
   <header class="site-header" id="home">
     <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="ThakurJi Salon home">
-        <img src="assets/thakur-ji-log.png" alt="ThakurJi Salon logo" class="logo" />
-        <span>ThakurJi Salon</span>
+      <a class="brand" href="#home" aria-label="ThakurJi Hair Salon home">
+        <img src="assets/thakur-ji-log.png" alt="ThakurJi Hair Salon logo" class="logo" />
+        <span>ThakurJi Hair Salon</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -45,19 +45,60 @@
   </header>
 
   <main>
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Fresh. Bold. You.</p>
-          <h1>Luxury Hair & Grooming Experience in a Jazzy Modern Space</h1>
-          <p class="hero-copy">
-            At ThakurJi Salon, style is personal. From clean fades and signature cuts to color transformations and event-ready finishes, we craft looks that fit your face, vibe, and lifestyle.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:0395440478">Call Now to Book</a>
-            <a class="btn btn-ghost" href="services.html">Explore Services</a>
+    <section class="section home-carousel" aria-label="Hair services carousel">
+      <div class="home-carousel-full">
+        <div class="carousel" id="home-carousel">
+          <div class="carousel-track">
+            <article class="carousel-slide active" data-slide="0">
+              <img class="carousel-bg" src="assets/gallery/g1.webp" alt="Men's haircut inspiration" />
+              <div class="carousel-overlay">
+                <p class="eyebrow">Men's Hair Services</p>
+                <h2>Fades, Cuts & Beard Grooming</h2>
+                <p class="hero-copy">Sharp lines, modern texture, and beard detailing that keeps you looking crisp.</p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="tel:0395440478">Call to Book</a>
+                  <a class="btn btn-ghost" href="services.html">View Pricing</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="carousel-slide" data-slide="1">
+              <img class="carousel-bg" src="assets/gallery/g2.webp" alt="Women's hairstyle inspiration" />
+              <div class="carousel-overlay">
+                <p class="eyebrow">Women's Hair Services</p>
+                <h2>Color, Highlights & Luxe Cuts</h2>
+                <p class="hero-copy">Highlights, root touch-ups, and dimensional color with a salon finish.</p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="tel:0395440478">Call to Book</a>
+                  <a class="btn btn-ghost" href="services.html">View Pricing</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="carousel-slide" data-slide="2">
+              <img class="carousel-bg" src="assets/gallery/g3.webp" alt="Beauty and treatment inspiration" />
+              <div class="carousel-overlay">
+                <p class="eyebrow">Beauty Services</p>
+                <h2>Hair Treatments & Event Styling</h2>
+                <p class="hero-copy">Scalp care, hair spa treatments, and event-ready looks for weddings and celebrations.</p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="tel:0395440478">Call to Book</a>
+                  <a class="btn btn-ghost" href="services.html">View Pricing</a>
+                </div>
+              </div>
+            </article>
           </div>
-          <p class="small-note">No online booking. Call us directly for appointments.</p>
+
+          <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
+            <button class="carousel-dot active" type="button" data-go="0" aria-label="Men's slide" aria-selected="true"></button>
+            <button class="carousel-dot" type="button" data-go="1" aria-label="Women's slide" aria-selected="false"></button>
+            <button class="carousel-dot" type="button" data-go="2" aria-label="Beauty slide" aria-selected="false"></button>
+          </div>
+
+          <div class="carousel-arrows" aria-hidden="true">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous slide">‹</button>
+            <button class="carousel-arrow carousel-next" type="button" aria-label="Next slide">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -65,7 +106,7 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div>
-          <p class="eyebrow">Why ThakurJi Salon</p>
+          <p class="eyebrow">Why ThakurJi Hair Salon</p>
           <h2>Style With Skill, Service With Heart</h2>
           <p>
             We combine creativity, technical precision and attentive consultation to deliver results that look great on day one and grow out beautifully.
@@ -86,20 +127,20 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section home-experience">
       <div class="container">
         <p class="eyebrow">Salon Experience</p>
         <h2>More Than a Haircut, It Is a Full Style Upgrade</h2>
-        <div class="services-grid">
-          <article class="card">
+        <div class="services-grid experience-cards">
+          <article class="card experience-card experience-card-1">
             <h3>Consultation First</h3>
             <p>Every session starts with a style consult based on your face shape, hair type, and daily routine.</p>
           </article>
-          <article class="card">
+          <article class="card experience-card experience-card-2">
             <h3>Trend + Personality</h3>
             <p>We blend current trends with your personal vibe so your final look feels fresh and natural.</p>
           </article>
-          <article class="card">
+          <article class="card experience-card experience-card-3">
             <h3>Detail-Driven Finish</h3>
             <p>From precision edges to texture control, we focus on details that elevate your complete look.</p>
           </article>
@@ -150,9 +191,98 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> ThakurJi Salon. All rights reserved.</p>
+  <footer class="outer-footer">
+    <div class="container outer-footer-grid">
+      <div class="outer-footer-col outer-footer-brand">
+        <div class="footer-brand-row">
+          <div>
+            <p class="footer-name">ThakurJi Hair Salon</p>
+            <p class="outer-footer-small footer-contact-line">
+              <span class="footer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 6-9 14-9 14S3 16 3 10a9 9 0 1 1 18 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              147 carinish road Clayton VIC 3168
+            </p>
+          </div>
+        </div>
+        <p class="outer-footer-small footer-contact-line">
+          <span class="footer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.11 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.12.9.38 1.77.76 2.59a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.49-1.28a2 2 0 0 1 2.11-.45c.82.38 1.69.64 2.59.76A2 2 0 0 1 22 16.92Z"></path>
+            </svg>
+          </span>
+          <a href="tel:0395440478">0395440478</a>
+        </p>
+        <p class="outer-footer-small footer-contact-line">
+          <span class="footer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16v16H4z"></path>
+              <path d="m22 6-10 7L2 6"></path>
+            </svg>
+          </span>
+          <a href="mailto:thakurjihairsalon@gmail.com">thakurjihairsalon@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="outer-footer-col">
+        <h3>Quick Links</h3>
+        <div class="footer-links-row" aria-label="Quick links">
+          <a class="footer-link" href="index.html">
+            <span class="footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            Home
+          </a>
+          <a class="footer-link" href="services.html">
+            <span class="footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            Services
+          </a>
+          <a class="footer-link" href="gallery.html">
+            <span class="footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            Gallery
+          </a>
+          <a class="footer-link" href="reviews.html">
+            <span class="footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            Reviews
+          </a>
+          <a class="footer-link" href="contact.html">
+            <span class="footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <div class="outer-footer-col">
+        <h3>Hours</h3>
+        <p class="outer-footer-small">Mon-Sat: 9:00 AM - 7:00 PM</p>
+        <p class="outer-footer-small">Sun: 10:00 AM - 5:00 PM</p>
+        <a href="contact.html">Plan Your Visit</a>
+      </div>
+    </div>
+
+    <div class="container outer-footer-bottom">
+      <p>© <span id="year"></span> ThakurJi Hair Salon. All rights reserved.</p>
       <a href="tel:0395440478">Call for Booking</a>
     </div>
   </footer>

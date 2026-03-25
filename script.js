@@ -28,6 +28,65 @@ if (navToggle && mobileMenu) {
   });
 }
 
+// Home page carousel (Men/Women/Beauty)
+const homeCarousel = document.getElementById('home-carousel');
+if (homeCarousel) {
+  const slides = homeCarousel.querySelectorAll('.carousel-slide');
+  const dots = homeCarousel.querySelectorAll('.carousel-dot');
+  const prevBtn = homeCarousel.querySelector('.carousel-prev');
+  const nextBtn = homeCarousel.querySelector('.carousel-next');
+
+  let activeIndex = 0;
+  let timer = null;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const goTo = (idx) => {
+    const nextIndex = ((idx % slides.length) + slides.length) % slides.length;
+    slides.forEach((s) => s.classList.remove('active'));
+    dots.forEach((d) => {
+      d.classList.remove('active');
+      d.setAttribute('aria-selected', 'false');
+    });
+
+    activeIndex = nextIndex;
+    const activeSlide = slides[activeIndex];
+    if (activeSlide) activeSlide.classList.add('active');
+
+    const activeDot = dots[activeIndex];
+    if (activeDot) {
+      activeDot.classList.add('active');
+      activeDot.setAttribute('aria-selected', 'true');
+    }
+  };
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const go = Number(dot.dataset.go || 0);
+      goTo(go);
+      if (timer) clearInterval(timer);
+      if (!prefersReducedMotion) {
+        timer = setInterval(() => goTo(activeIndex + 1), 7000);
+      }
+    });
+  });
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(activeIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(activeIndex + 1));
+
+  if (!prefersReducedMotion) {
+    timer = setInterval(() => goTo(activeIndex + 1), 7000);
+
+    homeCarousel.addEventListener('mouseenter', () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    });
+    homeCarousel.addEventListener('mouseleave', () => {
+      if (!timer) timer = setInterval(() => goTo(activeIndex + 1), 7000);
+    });
+  }
+}
+
 const reviewsList = document.getElementById('reviews-list');
 if (reviewsList) {
   const reviewSnippets = [
@@ -152,33 +211,46 @@ if (
     card.setAttribute('aria-label', `${label}${extra}`);
   });
 
-  const setModalContent = (index) => {
-    const card = cardsArray[index];
-    if (!card) return;
-    const img = card.querySelector('img');
-    const title = card.querySelector('h3');
-    const text = card.querySelector('p');
-    if (!img || !title || !text) return;
+  // Modal carousel should not depend on duplicated DOM nodes.
+  // Build a unique list by image src so Prev/Next always works reliably.
+  const uniqueCards = [];
+  const srcToIndex = new Map();
+  cardsArray.forEach((cardEl) => {
+    const img = cardEl.querySelector('img');
+    const titleEl = cardEl.querySelector('h3');
+    const textEl = cardEl.querySelector('p');
+    if (!img || !titleEl || !textEl) return;
+    const src = img.getAttribute('src') || '';
+    if (!src || srcToIndex.has(src)) return;
+    srcToIndex.set(src, uniqueCards.length);
+    uniqueCards.push({
+      src,
+      alt: img.getAttribute('alt') || '',
+      title: titleEl.textContent || '',
+      text: textEl.textContent || ''
+    });
+  });
 
-    // Force the browser to fully recalculate the rotated image layout.
-    // Without this, some mobile browsers may keep the previous image geometry.
-    galleryModalImage.alt = img.alt;
+  const setModalContent = (index) => {
+    const item = uniqueCards[index];
+    if (!item) return;
+    galleryModalImage.alt = item.alt;
     galleryModalImage.src = '';
     galleryModalImage.getBoundingClientRect();
-    galleryModalImage.src = img.src;
-    galleryModalTitle.textContent = title.textContent || '';
-    galleryModalText.textContent = text.textContent || '';
+    galleryModalImage.src = item.src;
+    galleryModalTitle.textContent = item.title;
+    galleryModalText.textContent = item.text;
 
-    // Ensure layout is recalculated after the image swap.
-    // This avoids some mobile rendering quirks where the rotated/contained image
-    // can temporarily affect layout and introduce horizontal scrolling.
     window.requestAnimationFrame(() => {
       galleryModalImage.getBoundingClientRect();
     });
   };
 
   const openModal = (card) => {
-    currentIndex = cardsArray.indexOf(card);
+    const img = card ? card.querySelector('img') : null;
+    const src = img ? img.getAttribute('src') : '';
+    if (!src || !srcToIndex.has(src)) return;
+    currentIndex = srcToIndex.get(src);
     setModalContent(currentIndex);
     galleryModal.classList.add('open');
     document.body.classList.add('gallery-modal-open');
@@ -228,13 +300,13 @@ if (
   });
 
   galleryModalPrev.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cardsArray.length) % cardsArray.length;
+    currentIndex = (currentIndex - 1 + uniqueCards.length) % uniqueCards.length;
     setModalContent(currentIndex);
     galleryModalClose.focus();
   });
 
   galleryModalNext.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cardsArray.length;
+    currentIndex = (currentIndex + 1) % uniqueCards.length;
     setModalContent(currentIndex);
     galleryModalClose.focus();
   });
@@ -245,12 +317,12 @@ if (
   });
   document.addEventListener('keydown', (event) => {
     if (galleryModal.classList.contains('open') && event.key === 'ArrowLeft') {
-      currentIndex = (currentIndex - 1 + cardsArray.length) % cardsArray.length;
+      currentIndex = (currentIndex - 1 + uniqueCards.length) % uniqueCards.length;
       setModalContent(currentIndex);
       galleryModalClose.focus();
     }
     if (galleryModal.classList.contains('open') && event.key === 'ArrowRight') {
-      currentIndex = (currentIndex + 1) % cardsArray.length;
+      currentIndex = (currentIndex + 1) % uniqueCards.length;
       setModalContent(currentIndex);
       galleryModalClose.focus();
     }
